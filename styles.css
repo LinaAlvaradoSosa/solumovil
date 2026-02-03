@@ -1,3 +1,4 @@
+
 :root {
   --yellow: #FFD700;
   --dark-blue: #3359A4;
@@ -18,7 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -89,6 +90,157 @@ header {
   opacity: 0.85;
 }
 
+/* ============ HEADER ============ */
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.yellow-bar {
+  height: 5px;
+  background: var(--yellow);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 5%;
+  gap: 18px;
+  flex-wrap: nowrap;            /* CLAVE: evita que se bajen los links */
+}
+
+/* ====== Bloque logos (izquierda) ====== */
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex: 0 0 auto;              /* no crece, no empuja raro */
+  min-width: 320px;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+}
+
+.brand .solu,
+.brand .movil {
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+}
+
+.brand .movil { color: var(--red); }
+
+.brand small{
+  display:block;
+  font-size: 0.70rem;
+  color:#444;
+  margin-top:3px;
+  opacity:0.85;
+}
+
+/* Separador vertical */
+.logo-sep{
+  width:2px;
+  height:46px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 2px;
+}
+
+/* Logo aliado (badge) */
+.partner-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border:2px solid rgba(0,0,0,0.16);
+  border-radius:12px;
+  padding:8px 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10);
+  text-decoration:none;
+  flex: 0 0 auto;
+}
+
+.partner-badge img{
+  height:56px;
+  width:auto;
+  max-width:160px;
+  object-fit:contain;
+  display:block;
+}
+
+/* ====== Links (derecha) ====== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;               /* ocupa el espacio sobrante */
+  min-width: 0;                 /* evita overflow raro */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 800;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;          /* evita que “Tunja-Boyacá” y etc bajen (por si acaso) */
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.55);
+  transform: translateY(-1px);
+}
+
+/* ============ RESPONSIVE NAV ============ */
+
+/* Cuando ya no cabe TODO en una línea, ocultas menú como tú ya haces */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .navbar { justify-content: flex-start; }  /* NO al centro */
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .navbar { justify-content: flex-start; }
+
+  .logo-wrap{
+    gap:10px;
+    min-width: 0;
+  }
+
+  .logo-sep{ height: 38px; }
+
+  .partner-badge{
+    padding:6px 8px;
+    border-radius:10px;
+  }
+
+  .partner-badge img{
+    height:44px;
+    max-width:130px;
+  }
+
+  .brand .solu,
+  .brand .movil{
+    font-size: 1.35rem;
+  }
+
+  .brand small{
+    font-size: 0.64rem;
+  }
+}
 /* Links más premium */
 .nav-links {
   list-style: none;
