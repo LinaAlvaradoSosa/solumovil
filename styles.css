@@ -117,17 +117,17 @@ header {
 
 /* ====== Bloque logos (izquierda) ====== */
 .logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex: 0 0 auto;              /* no crece, no empuja raro */
-  min-width: 320px;
+  display: flex;
+  align-items: center; /* 🔥 esto es CLAVE */
+  gap: 14px;
 }
 
+
 .brand{
-  display:flex;
-  flex-direction:column;
-  line-height:1.05;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  line-height: 1;
 }
 
 .brand .solu,
@@ -135,17 +135,20 @@ header {
   font-weight: 800;
   font-size: 1.6rem;
   letter-spacing: 0.3px;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .brand .movil { color: var(--red); }
 
 .brand small{
-  display:block;
+  margin-top: 4px;
   font-size: 0.70rem;
-  color:#444;
-  margin-top:3px;
-  opacity:0.85;
+  line-height: 1.1;
+  color: #444;
+  opacity: 0.85;
 }
+
 
 /* Separador vertical */
 .logo-sep{
