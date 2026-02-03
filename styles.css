@@ -59,7 +59,6 @@ header {
 .yellow-bar {
   height: 5px;
   background: var(--yellow);
-  border-bottom: 2px dashed var(--black);
 }
 
 /* Navbar más pro (espaciado + alineación) */
