@@ -1,0 +1,566 @@
+:root {
+  --yellow: #FFD700;
+  --dark-blue: #3359A4;
+  --red: #E32626;
+  --black: #222;
+  --white: #fff;
+
+  /* UX tokens */
+  --bg: #f9f9f9;
+  --muted: #666;
+  --radius: 14px;
+  --shadow-sm: 0 6px 16px rgba(0,0,0,0.08);
+  --shadow-md: 0 10px 26px rgba(0,0,0,0.12);
+  --container: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* para que el sticky header no tape los anchors */
+}
+
+body {
+  background: var(--bg);
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Mejora UX: enlaces accesibles */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(51, 89, 164, 0.35);
+  outline-offset: 3px;
+}
+
+/* TODOS LOS TITULOS H2 EN AZUL Y CENTRADOS */
+section h2 {
+  color: var(--dark-blue);
+  text-align: center;
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+}
+
+/* ============ HEADER ============ */
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.yellow-bar {
+  height: 5px;
+  background: var(--yellow);
+  border-bottom: 2px dashed var(--black);
+}
+
+/* Navbar más pro (espaciado + alineación) */
+.navbar {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 5%;
+}
+
+.logo .solu,
+.logo .movil {
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+}
+
+.logo .movil {
+  color: var(--red);
+}
+
+.logo small {
+  display: block;
+  font-size: 0.70rem;
+  color: #444;
+  margin-top: 3px;
+  opacity: 0.85;
+}
+
+/* Links más premium */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 800;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.55);
+  transform: translateY(-1px);
+}
+
+/* ============ HERO ============ */
+.hero {
+  color: white;
+  padding: 70px 5%;
+  border-bottom: 15px solid var(--yellow);
+  /* Mejor estética: overlay suave */
+  background:
+    radial-gradient(1200px 500px at 10% 10%, rgba(51,89,164,0.35), transparent 60%),
+    linear-gradient(180deg, #1d1d1d 0%, #141414 100%);
+}
+
+.hero-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.45rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.description {
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  color: rgba(255,255,255,0.88);
+}
+
+/* CTA más pro */
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-blue);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(51, 89, 164, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(51, 89, 164, 0.45);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.camion {
+  max-width: 440px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  transform: translateY(6px);
+}
+
+/* ============ ABOUT ============ */
+.about {
+  padding: 80px 5%;
+  background: white;
+}
+
+.about h2 {
+  margin-bottom: 42px;
+}
+
+.about-text {
+  max-width: 920px;
+  margin: 0 auto 22px;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  text-align: justify;
+  color: #2f2f2f;
+}
+
+/* ============ PURPOSE ============ */
+.purpose {
+  padding: 80px 5%;
+  background: #f4f6fb;
+}
+
+.purpose h2 {
+  margin-bottom: 50px;
+}
+
+/* Grid más consistente */
+.purpose-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.purpose-card {
+  background: #fff; /* antes tenías fondo azul claro raro */
+  padding: 46px 38px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.purpose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.purpose-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(51, 89, 164, 0.12);
+  color: var(--dark-blue);
+  font-size: 2.2rem;
+  margin: 0 auto 18px;
+}
+
+.purpose-card h3 {
+  color: var(--dark-blue);
+  margin-bottom: 14px;
+  font-size: 1.35rem;
+}
+
+.purpose-card p {
+  text-align: justify;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+  color: #2f2f2f;
+}
+
+/* ============ SERVICIOS ============ */
+.services {
+  background: white;
+  padding: 80px 5%;
+}
+
+.services h2 {
+  margin-bottom: 42px;
+}
+
+.services-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.service-box {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Imagen más “premium” */
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+}
+
+/* Barra inferior para el título */
+.service-box h3 {
+  padding: 16px 12px;
+  font-size: 1.05rem;
+  color: white;
+  background: var(--dark-blue);
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+/* ============ VIDEO ============ */
+.video-section {
+  padding: 80px 5%;
+  background: #F4F6FB;
+}
+
+.video-section h2 {
+  margin-bottom: 44px;
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ===========================
+   FOOTER (NO TOCAR) - lo dejas como ya está full
+   (Solo dejo tu color base, sin romper)
+=========================== */
+
+footer {
+  background-color: #3359A4;
+}
+
+/* WhatsApp flotante (botón circular fijo) */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  z-index: 3000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* FOOTER (AZUL PRO) */
+.site-footer {
+  background: var(--dark-blue);
+  color: #fff;
+}
+
+/* Fuerza contraste correcto (evita texto “lavado”) */
+.site-footer,
+.site-footer p,
+.site-footer li,
+.site-footer h3 {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.footer-accent {
+  height: 6px;
+  background: var(--yellow);
+  border-bottom: 2px dashed var(--black);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 5% 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+footer{
+  background-color: #3359A4;
+}
+
+.footer-col h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-text {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #f1f1f1; /* más legible en azul */
+}
+
+.footer-phones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-phones li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.footer-phones i {
+  margin-right: 10px;
+  color: var(--yellow);
+}
+
+/* Bloques internos (Horario / Ubicación) dentro de cada columna */
+.footer-col .footer-box {
+  margin-top: 30px;
+}
+
+/* Títulos amarillos dentro del footer */
+.footer-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--yellow);
+  font-weight: bold;
+}
+
+.footer-box p {
+  margin-bottom: 6px;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+/* Botón Facebook */
+.footer-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1877f2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 18px; /* separación del mapa */
+}
+
+/* Mapa */
+.footer-map {
+  width: 100%;
+  height: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  background: rgba(0,0,0,0.2);
+  padding: 20px 5%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+/* WhatsApp flotante (botón circular fijo) */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  z-index: 3000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* ============ RESPONSIVE ============ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: 2;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .purpose-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+
+  .hero {
+    padding: 60px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.05rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 30px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
