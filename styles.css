@@ -671,6 +671,112 @@ footer{
   transform: scale(1.08);
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
+/* ============ MÉTODOS DE PAGO ============ */
+.payment-methods {
+  background: white;
+  padding: 40px 5%;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.payment-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.payment-info {
+  text-align: center;
+}
+
+.payment-info h3 {
+  color: var(--dark-blue);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.payment-info p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.payment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.method-item {
+  background: #f8f9fa;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.method-item:hover {
+  transform: translateY(-3px);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.img-payment {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+}
+
+.method-item:hover .img-payment {
+  filter: grayscale(0%);
+}
+
+/* Estilo para Facturación y Efectivo */
+.badge-item {
+  gap: 10px;
+  color: #444;
+}
+
+.badge-item i {
+  font-size: 1.4rem;
+  color: var(--dark-blue);
+}
+
+.badge-item span {
+  font-size: 0.95rem;
+}
+
+.badge-item strong {
+  color: var(--red);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .payment-methods {
+    padding: 40px 5%;
+  }
+  
+  .payment-grid {
+    gap: 15px;
+  }
+  
+  .method-item {
+    padding: 10px 15px;
+    flex: 1 1 140px; /* Hace que se acomoden en filas de a dos */
+  }
+
+  .payment-info h3 {
+    font-size: 1.4rem;
+  }
+}
 
 /* ============ RESPONSIVE ============ */
 
