@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="site-header">
     <nav class="navbar">
       <!-- LOGOS (izquierda) -->
       <div class="logo-wrap">
@@ -22,14 +22,14 @@
           <span class="solu">SOLU</span><span class="movil">MÓVIL</span>
           <small>SOLUCIONES EN MOVILIDAD S.A.S</small>
         </div>
-  
+
         <span class="logo-sep" aria-hidden="true"></span>
-  
+
         <a class="partner-badge" href="#" aria-label="Asociación Mixed Carry">
           <img src="imagenes/mixed-carry.jpg" alt="Mixed Carry - Asociación" />
         </a>
       </div>
-  
+
       <!-- LINKS (derecha) -->
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
@@ -39,17 +39,24 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-  
+
     <div class="yellow-bar"></div>
-  </header>  
+  </header>
 
 <section id="inicio" class="hero">
   <div class="hero-container">
     <div class="hero-text">
-      <h1>Soluciones en transporte en Tunja, Boyacá y Colombia</h1>
+
+      <!-- ✅ TITULO MEJORADO: “Soluciones en Transporte” MÁS FUERTE + 1 Renglón -->
+      <h1 class="hero-title">
+        <span class="hero-title-main">Soluciones en Transporte</span>
+        <span class="hero-title-sub">Operación Nacional</span>
+      </h1>
+
       <p class="description">
-        Acarreos, Trasteos, Mudanzas, Expresos, Encomiendas y mas!
+        Acarreos, Trasteos, Mudanzas, Expresos, Encomiendas, Viajes Turisticos y mas!
       </p>
+
       <a href="https://wa.me/573002773577" class="btn-blue">Cotizar por WhatsApp</a>
     </div>
 
@@ -80,21 +87,58 @@
 <section id="proposito" class="purpose">
   <h2>Propósito y Futuro</h2>
 
+  <!-- ✅ Cards colapsables -->
   <div class="purpose-grid">
-    <div class="purpose-card">
-      <i class="fas fa-bullseye"></i>
-      <h3>Nuestra Misión</h3>
-      <p>
-        Brindar un servicio de transporte de carga, trasteos y acarreos en Tunja-Boyacá, caracterizado por su calidad, economía y confiabilidad, enfocado en el cumplimiento, la seguridad y la atención preferencial al cliente. Trabajamos cada día para ofrecer soluciones eficientes que generen tranquilidad, confianza y satisfacción en cada traslado.
-      </p>
+    <!-- MISIÓN -->
+    <div class="purpose-card purpose-collapsible">
+      <div class="pc-head">
+        <i class="fas fa-bullseye" aria-hidden="true"></i>
+
+        <h3>Nuestra Misión</h3>
+
+        <button
+          class="pc-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mision-text"
+          title="Ver / ocultar misión"
+        >
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          <span class="sr-only">Ver / ocultar misión</span>
+        </button>
+      </div>
+
+      <div class="pc-body" id="mision-text" hidden>
+        <p>
+          Brindar un servicio de transporte de carga, trasteos y acarreos en Tunja-Boyacá, caracterizado por su calidad, economía y confiabilidad, enfocado en el cumplimiento, la seguridad y la atención preferencial al cliente. Trabajamos cada día para ofrecer soluciones eficientes que generen tranquilidad, confianza y satisfacción en cada traslado.
+        </p>
+      </div>
     </div>
 
-    <div class="purpose-card">
-      <i class="fas fa-road"></i>
-      <h3>Nuestra Visión</h3>
-      <p>
-        Consolidarnos como el referente número uno en transporte de carga y mudanzas desde Tunja hacia todo el territorio colombiano. Aspiramos a transformar la experiencia de transporte en un proceso ágil y seguro, basando nuestro crecimiento en la calidad humana de nuestro equipo, la eficiencia operativa y la satisfacción total de cada familia y empresa que confía en nosotros.
-      </p>
+    <!-- VISIÓN -->
+    <div class="purpose-card purpose-collapsible">
+      <div class="pc-head">
+        <i class="fas fa-road" aria-hidden="true"></i>
+
+        <h3>Nuestra Visión</h3>
+
+        <button
+          class="pc-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="vision-text"
+          title="Ver / ocultar visión"
+        >
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          <span class="sr-only">Ver / ocultar visión</span>
+        </button>
+      </div>
+
+      <div class="pc-body" id="vision-text" hidden>
+        <p>
+          Consolidarnos como el referente número uno en transporte de carga y mudanzas desde Tunja hacia todo el territorio colombiano. Aspiramos a transformar la experiencia de transporte en un proceso ágil y seguro, basando nuestro crecimiento en la calidad humana de nuestro equipo, la eficiencia operativa y la satisfacción total de cada familia y empresa que confía en nosotros.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -155,36 +199,37 @@
 </section>
 
 <section id="video" class="video-section">
-    <h2>Un poco mas de nuestro trabajo</h2>
-    
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/2uQA23mgr6A"
-        title="SoluMóvil Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
-  
-    <div class="video-container" style="margin-top: 30px;">
-      <iframe
-        src="https://www.youtube.com/embed/wqIb99IEx3A"
-        title="Mixed carry Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
+  <h2>Un poco mas de nuestro trabajo</h2>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/2uQA23mgr6A"
+      title="SoluMóvil Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="video-container" style="margin-top: 30px;">
+    <iframe
+      src="https://www.youtube.com/embed/wqIb99IEx3A"
+      title="Mixed carry Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
 </section>
 
+<!-- ✅ MEDIOS DE PAGO -->
 <section class="payment-methods">
   <div class="payment-container">
     <div class="payment-info">
       <h3>Medios de Pago y Facturación</h3>
       <p>Facilitamos tus trámites con diversas opciones de pago y cumplimiento legal.</p>
     </div>
-    
+
     <div class="payment-grid">
       <div class="method-item">
         <img src="imagenes/nequi.jpg" alt="Nequi" class="img-payment">
@@ -195,7 +240,7 @@
       <div class="method-item">
         <img src="imagenes/bancolombia.png" alt="Bancolombia" class="img-payment">
       </div>
-      
+
       <div class="method-item badge-item">
         <i class="fas fa-file-invoice-dollar"></i>
         <span>Facturación Electrónica</span>
@@ -206,23 +251,24 @@
       </div>
     </div>
   </div>
-</section> 
-<footer>
+</section>
+
+<!-- ✅ FOOTER COMPLETO -->
+<footer id="contacto">
   <div class="footer-inner">
 
     <!-- Columna izquierda -->
     <div class="footer-col">
       <h3>Contacto</h3>
       <p class="footer-text">Llámanos y negocia tu transporte, estaremos felices de atenderte.</p>
-  
+
       <ul class="footer-phones">
         <li><i class="fas fa-phone"></i> 312 592 6070</li>
         <li><i class="fas fa-phone"></i> 300 277 3577</li>
         <li><i class="fas fa-phone"></i> 310 213 1500</li>
         <li><i class="fas fa-phone"></i> 319 255 3928</li>
       </ul>
-  
-      <!-- Horario debajo de Contacto -->
+
       <div class="footer-box">
         <h4>Horario de Atención</h4>
         <p>Lunes a Domingo</p>
@@ -230,46 +276,46 @@
         <p>Atención inmediata por WhatsApp</p>
       </div>
     </div>
-  
+
     <!-- Columna derecha -->
     <div class="footer-col">
       <h3>Síguenos</h3>
-  
+
       <a href="https://www.facebook.com/transporte.co.net"
          target="_blank"
          rel="noopener noreferrer"
          class="facebook-btn footer-facebook">
         <i class="fab fa-facebook-f"></i> Facebook
       </a>
-  
-      <!-- Ubicación debajo de Facebook -->
+
       <div class="footer-box footer-location">
         <h4>Ubicación</h4>
-        <a href="https://maps.google.com/?q=MAKRO+SUPERMAYORISTA+S.A+-+TUNJA+Universitaria+39" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     style="text-decoration: none; display: block;">
-    
-    <div class="footer-map" style="pointer-events: none;"> 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.27216664273!2d-73.35238262415131!3d5.54139883395982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7c384a18d5e9%3A0xecb1e39dbc060870!2sMAKRO%20SUPERMAYORISTA%20S.A%20-%20TUNJA!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-    
-    <p style="color: #FFD700; font-size: 0.85rem; margin-top: 5px; text-align: center;">
-      <i class="fas fa-external-link-alt"></i> Ver ubicación exacta en Google Maps
-    </p>
-  </a>
+
+        <a href="https://maps.google.com/?q=MAKRO+SUPERMAYORISTA+S.A+-+TUNJA+Universitaria+39"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="text-decoration: none; display: block;">
+
+          <div class="footer-map" style="pointer-events: none;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.27216664273!2d-73.35238262415131!3d5.54139883395982!2m3!1f0!2f0!3f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7c384a18d5e9%3A0xecb1e39dbc060870!2sMAKRO%20SUPERMAYORISTA%20S.A%20-%20TUNJA!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <p style="color: #FFD700; font-size: 0.85rem; margin-top: 5px; text-align: center;">
+            <i class="fas fa-external-link-alt"></i> Ver ubicación exacta en Google Maps
+          </p>
+        </a>
       </div>
     </div>
   </div>
-  
+
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/573002773577"
      class="whatsapp-btn"
@@ -277,9 +323,54 @@
      rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i>
   </a>
-
 </footer>
 
+<!-- ✅ JS 1: abrir/cerrar Misión/Visión -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.purpose-collapsible').forEach(card => {
+      const btn = card.querySelector('.pc-toggle');
+      const body = card.querySelector('.pc-body');
+
+      if (!btn || !body) return;
+
+      btn.setAttribute('aria-expanded', 'false');
+      body.hidden = true;
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        body.hidden = isOpen;
+        card.classList.toggle('is-open', !isOpen);
+      });
+    });
+  });
+</script>
+
+<!-- ✅ JS 2: navbar activo por scroll -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const links = document.querySelectorAll('.nav-links a');
+
+    function setActiveLink() {
+      let currentId = 'inicio';
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 130;
+        if (scrollY >= top) currentId = sec.id;
+      });
+
+      links.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+      });
+    }
+
+    setActiveLink();
+    window.addEventListener('scroll', setActiveLink, { passive: true });
+  });
+</script>
 
 </body>
 </html>
